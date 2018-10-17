@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import Movie from './Movie.js'
 
@@ -27,7 +27,22 @@ const movies = [
 
 
 class App extends Component {
+
+  // Render: componentWillMount() -> render() -> componentDidMount()
+  // update: componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() -> render() -> componentDidUpdate()
+
+  /* Those happen automatically */
+  componentWillMount(){
+    console.log('will mount')
+  }
+
+
+  componentDidMount(){
+    console.log('did mount')
+  }
+
   render() {
+    console.log('did render')
     return (
       <div className="App">
         {movies.map((movie, index) => {
