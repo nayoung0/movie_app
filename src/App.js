@@ -31,20 +31,27 @@ class App extends Component {
   // Render: componentWillMount() -> render() -> componentDidMount()
   // update: componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() -> render() -> componentDidUpdate()
 
-  /* Those happen automatically */
-  componentWillMount(){
-    console.log('will mount')
+  // This is the way we load component with a default state
+  state = {
+    greeting: "hello!"
   }
-
 
   componentDidMount(){
-    console.log('did mount')
+    setTimeout(() => {
+      /* Wrong example */
+      // this.state.greeting = 'changed!'
+
+      this.setState({
+        greeting: "hello again!"
+      })
+    }, 2000)
   }
 
+
   render() {
-    console.log('did render')
     return (
       <div className="App">
+        {this.state.greeting}
         {movies.map((movie, index) => {
           return <Movie title={movie.title} poster={movie.poster} key={index} />
         })}
