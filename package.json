@@ -5,13 +5,16 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-lines-ellipsis": "^0.13.2",
     "react-scripts": "2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +24,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "http://nayoung0.github.io/movie_app",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
